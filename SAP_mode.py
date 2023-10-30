@@ -100,42 +100,6 @@ network = Network(status_neopixel=board.NEOPIXEL, esp=esp)
 
 text_info, color_info, speed_info = DesUpdate()
 
-# TEXT_URL = "https://mill.pt/matrix/display_data.php"  # URL to results page
-
-# print("Fetching text from", TEXT_URL)
-# # r = requests.get(TEXT_URL)
-# r = network.fetch_data(TEXT_URL)
-
-# print("Text recovered: ", r)
-
-# lines = (r).split("<br>")
-
-# # Initialize variables
-# text_info = None
-# color_info = None
-# speed_info = None
-
-# # Loop through each line and extract the values
-# for line in lines:
-#     parts = line.split(":")  # Split each line by ':' to separate key and value
-#     if len(parts) == 2:
-#         key = parts[0].strip()
-#         value = parts[1].strip()
-#         if key == "Text":
-#             text_info = value
-#         elif key == "Hexadecimal":
-#             result_string = value[1:]
-#             hex_number = int(result_string, 16)
-#             color_info = hex_number
-#             print("Color HEX: ", color_info)
-#         elif key == "Float":
-#             speed_info = float(value)  # Convert the value to a float
-
-# # Print the extracted values
-# print("Text:", text_info)
-# print("Hexadecimal:", color_info)
-# print("Float:", speed_info)
-
 # Coords MILL
 LAT = "38.720"
 LON = "-9.141"
@@ -176,12 +140,7 @@ while True:
         print("Button pressed")
         text_new, color_new, speed_new = DesUpdate()
         print("Checking!")
-
-        # supervisor.reload()
-
-        # matrix = Matrix()
-
-        ## ERROR HERE
+        
         gfx.descUpdate(text_new, color_new, speed_new)
         print("gfx loaded")
 

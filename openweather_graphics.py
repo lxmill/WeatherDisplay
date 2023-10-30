@@ -102,7 +102,7 @@ class OpenWeather_Graphics(displayio.Group):
         # DATA
         self.date = Label(self.small_font)
         self.date.color = ALT_COLOR
-        self.date.x = 5
+        self.date.x = 3
         self.date.y = 8
         self._paged_texts.append(self.date)
 
@@ -126,7 +126,9 @@ class OpenWeather_Graphics(displayio.Group):
 
         # Load txt into description field
         # with open("text.txt", "r", encoding="utf-8") as file:
+
         desc = my_string.split("\n")
+        # desc = my_string
 
         for i, line in enumerate(desc):
             if i < len(desc) - 1:
@@ -145,6 +147,7 @@ class OpenWeather_Graphics(displayio.Group):
         self._scrolling_texts = []
 
         desc = my_string.split("\n")
+        # desc = my_string
 
         for i, line in enumerate(desc):
             if i < len(desc) - 1:
